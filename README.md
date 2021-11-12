@@ -1,2 +1,2 @@
 # PassGen
-Simple passgen code in golang, to learn.
+A simple PassGen made by me, to learn golang.
