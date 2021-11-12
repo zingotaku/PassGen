@@ -11,7 +11,7 @@ const charset = "abcdefghijklmnopqrstuvwxyz" +
 	"*$%&()"
 
 var seededRand *rand.Rand = rand.New(
-	rand.NewSource(time.Now().UnixNano()))
+	rand.NewSource(1000 * time.Now().UnixNano()))
 
 func StringWithCharset(length int, charset string) string {
 	b := make([]byte, length)
@@ -26,9 +26,9 @@ func String(length int) string {
 }
 
 var randomInt int = rand.Int()
-var senhafoda string = (StringWithCharset(20, charset)) + string(randomInt)
+var passwd string = (StringWithCharset(20, charset)) + string(randomInt)
 
 func main() {
-	fmt.Println("Senha: ", senhafoda)
+	fmt.Println("Password: ", passwd)
 }
 
