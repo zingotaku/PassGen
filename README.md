@@ -16,3 +16,6 @@ generatePass.sh  main.go  README.md
 [zing@7K PassGen]$ ./generatePass.sh
 
 Password:  "passwd"
+
+#
+Algumas charsets copiadas do "Rugen", feito pelo [S0ra](https://github.com/S0raWasTaken/rugen)
