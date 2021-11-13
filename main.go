@@ -1,10 +1,21 @@
 package main
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
+	"io"
 	"math/rand"
 	"time"
 )
+
+func md5sum(s string) string {
+	h := md5.New()
+
+	io.WriteString(h, s)
+
+	return hex.EncodeToString(h.Sum(nil)[:16])
+}
 
 const charset = "abcdefghijklmnopqrstuvwxyz" +
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" +
@@ -28,7 +39,8 @@ func String(length int) string {
 var randomInt int = rand.Int()
 var passwd string = (StringWithCharset(20, charset)) + string(randomInt)
 
-func main() {
-	fmt.Println("Password: ", passwd)
-}
+var encryptedpasswd string = md5sum(passwd)
 
+func main() {
+	fmt.Println("Password: ", encryptedpasswd)
+}
