@@ -42,6 +42,5 @@ var passwd string = (StringWithCharset(20, charset)) + string(randomInt)
 var encryptedpasswd string = md5sum(passwd)
 
 func main() {
-	fmt.Println("Password: ", passwd)
-	fmt.Println("Encrypted Password: ", encryptedpasswd)
+	fmt.Println("Password: ", encryptedpasswd)
 }
