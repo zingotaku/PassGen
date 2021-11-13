@@ -19,7 +19,7 @@ func md5sum(s string) string {
 
 const charset = "abcdefghijklmnopqrstuvwxyz" +
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" +
-	"*$%&()"
+	"!@#$%&*()[]{}:;?/\\=+-_"
 
 var seededRand *rand.Rand = rand.New(
 	rand.NewSource(1000 * time.Now().UnixNano()))
@@ -42,5 +42,6 @@ var passwd string = (StringWithCharset(20, charset)) + string(randomInt)
 var encryptedpasswd string = md5sum(passwd)
 
 func main() {
-	fmt.Println("Password: ", encryptedpasswd)
+	fmt.Println("Password: ", passwd)
+	fmt.Println("Encrypted Password: ", encryptedpasswd)
 }
