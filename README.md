@@ -11,9 +11,9 @@ to run this software, run the below commands:
 
 generatePass.sh  main.go  README.md
 
-[zing@7K PassGen]$ chmod +x generatePass.sh
+[zing@7K PassGen]$ go build main.go
 
-[zing@7K PassGen]$ ./generatePass.sh
+[zing@7K PassGen]$ ./main
 
 Password:  "passwd"
 
